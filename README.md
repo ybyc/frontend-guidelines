@@ -2,16 +2,23 @@
 
 本规范结合团队开发经验总结提炼而成，旨在增强团队开发协作、提高代码质量和开发效率。
 
-<!--### Emoji图标指引-->
+### Emoji图标指引
 
-<!--> ⭐️表示一定要遵守的内容-->
-
-<!--> ❤️表示强烈推荐的内容-->
+> ⭐️表示一定要遵守的内容
 
 ### 目录
-- [开发环境]()
-- [项目规范]()
-- [代码风格]()
+- [开发环境](#1-开发环境)
+    - [系统环境](#11-系统环境)
+    - [VS Code环境](#12-vs-code环境)
+- [项目规范](#2-项目规范)
+    - [项目结构](#21-项目结构)
+    - [命名](#22-命名)
+    - [其他](#23-其他)
+- [代码风格](#3-代码风格)
+    - [JavaScript](#31-javascript)
+    - [HTML](#32-htmlcss)
+    - [CSS](#33-csssass)
+    - [Vue](#34-vue)
 
 ## 1. 开发环境
 
@@ -35,6 +42,7 @@
     {
         "vetur": {
             "format": {
+                // 默认格式化插件配置
                 "defaultFormatter": {
                     "html": "js-beautify-html",
                     "css": "prettier",
@@ -46,6 +54,7 @@
                 },
                 "defaultFormatterOptions": {
                     "js-beautify-html": {
+                        // 格式化时强制属性断行
                         "wrap_attributes": "force-aligned"
                     }
                 }
@@ -79,6 +88,7 @@
                 "autoFix": true
             }
         ],
+        // 保存时自动修复
         "eslint.autoFixOnSave": true,
     }
     ```
@@ -92,8 +102,11 @@
     ```javascript
     {
         "prettier": {
+            // 使用单引号
             "singleQuote": true,
+            // 行尾不加分号
             "semi": false,
+            // 缩进用两个空格
             "tabWidth": 2,
             "eslintIntegration": "prettier-eslint"
         },
@@ -106,6 +119,7 @@
 - Code Runner 直接在编辑时运行代码
 - GitLens git增强工具
 
+⭐️ESLint检查出的错误一定要处理
 
 ## 2. 项目规范
 
@@ -144,7 +158,7 @@
     
     > 只在某组件内或业务目录内公用的方法，不应放在此目录，应放在业务目录内
     
-- 只在某个业务功能中通用的组件/样式/配置/mixin，放在该业务目录下，不应放在外层。
+- ⭐️只在某个业务功能中通用的组件/样式/配置/mixin，放在该业务目录下，不应放在外层。
 
 
 ### 2.2 命名
@@ -183,7 +197,7 @@
     - 遇到实现特殊功能或者解决怪异问题的地方，建议在注释中写明代码这么写的原因。
     
 
-### 3.2 HTML/CSS
+### 3.2 HTML
 
 - 参考[编码规范 by @mdo](https://codeguide.bootcss.com)
 - 标签中统一使用双引号，等号两侧不能有空格
@@ -199,7 +213,7 @@
 
 ### 3.4 Vue
 
-遵守官方[Style Guide](https://vue.docschina.org/v2/style-guide/)
+⭐️遵守官方[Style Guide](https://vue.docschina.org/v2/style-guide/)
 
 
 #### 参考：
